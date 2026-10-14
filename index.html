@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="es-AR">
-<!DOCTYPE html>
-<html lang="es-AR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -26,17 +24,17 @@
 
   <div class="app-shell" id="app-shell">
     <header class="site-header" id="site-header">
-      <a class="brand" href="/" data-nav="home" aria-label="Voz de Potrero — inicio">
+      <a class="brand" href="./" data-nav="home" aria-label="Voz de Potrero — inicio">
         <img src="img/2367.png" alt="Voz de Potrero" width="150" height="42">
       </a>
 
       <nav class="nav" id="main-nav" aria-label="Navegación principal">
-        <a href="/noticias" data-nav="noticias">Noticias</a>
-        <a href="/programas" data-nav="programas">Programas</a>
-        <a href="/historia" data-nav="historia">Historia</a>
-        <a href="/equipo" data-nav="equipo">Equipo</a>
-        <a href="/comercial" data-nav="comercial">Comercial</a>
-        <a href="/contacto" data-nav="contacto">Contacto</a>
+        <a href="#noticias" data-nav="noticias">Noticias</a>
+        <a href="#programas" data-nav="programas">Programas</a>
+        <a href="#historia" data-nav="historia">Historia</a>
+        <a href="#equipo" data-nav="equipo">Equipo</a>
+        <a href="#comercial" data-nav="comercial">Comercial</a>
+        <a href="#contacto" data-nav="contacto">Contacto</a>
       </nav>
 
       <div class="header-tools">
@@ -66,14 +64,14 @@
     </header>
 
     <main id="main" class="app-main" tabindex="-1">
-      <!-- PORTADA (INTACTA Y PROTEGIDA) -->
+      <!-- PORTADA -->
       <section class="view view--home is-active" data-view="home" id="view-home" aria-labelledby="hero-title">
         <div class="hero-cinematic-bg" aria-hidden="true">
-        <img class="hero-slide" src="img/potrero_dusk_rosario_1791920417054.jpg" alt="">
-<img class="hero-slide" src="img/grassroots_sideline_setup_1791920439001.jpg" alt="">
-<img class="hero-slide" src="img/potrero_chalk_floodlights_1791920438367.jpg" alt="">
-<img class="hero-slide" src="img/broadcast_stadium_lights_1791920440467.jpg" alt="">
-<img src="img/2367.png" alt="Voz de Potrero" width="150" height="42">
+          <img class="hero-slide" src="img/potrero_dusk_rosario_1791920417054.jpg" alt="">
+          <img class="hero-slide" src="img/grassroots_sideline_setup_1791920439001.jpg" alt="">
+          <img class="hero-slide" src="img/potrero_chalk_floodlights_1791920438367.jpg" alt="">
+          <img class="hero-slide" src="img/broadcast_stadium_lights_1791920440467.jpg" alt="">
+          
           <div class="hero-shade hero-shade--horizontal"></div>
           <div class="hero-shade hero-shade--vertical"></div>
           <div class="hero-shade hero-shade--radial"></div>
@@ -92,13 +90,13 @@
           </h1>
           <p class="hero-description enter-item">Historias, deportes y comunidad contadas desde donde todo empieza: la cancha del barrio.</p>
           <div class="hero-actions enter-item">
-            <a class="hero-primary" href="/programas" data-nav="programas">
+            <a class="hero-primary" href="#programas" data-nav="programas">
               <span class="hero-primary-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M8 5 16 12 8 19"/></svg>
               </span>
               Explorá nuestros contenidos
             </a>
-            <a class="hero-secondary" href="/historia" data-nav="historia">Conocé nuestra historia <span aria-hidden="true">↗</span></a>
+            <a class="hero-secondary" href="#historia" data-nav="historia">Conocé nuestra historia <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
@@ -108,7 +106,7 @@
         </button>
       </section>
 
-      <!-- NOTICIAS (REDISEÑADO CON ATMÓSFERA EDITORIAL) -->
+      <!-- NOTICIAS -->
       <section class="view view--panel" data-view="noticias" id="view-noticias" aria-labelledby="news-title" hidden inert aria-hidden="true">
         <div class="panel-scroll">
           <div class="panel-inner interior-container">
@@ -118,20 +116,20 @@
                 <h1 id="news-title" tabindex="-1">Noticias <em>y coberturas</em></h1>
                 <p class="panel-lead">Historias, básquet, vóley, automovilismo y producciones contadas desde Rosario y sus barrios.</p>
               </div>
-              <a class="home-return" href="/" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
+              <a class="home-return" href="./" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
             </div>
             <div class="news-grid" id="news-list" aria-live="polite" aria-busy="false">
               <p class="loading-state">Cargando publicaciones…</p>
             </div>
             <div class="panel-footer-note">
               <span>Voz de Potrero</span>
-              <a href="/programas" data-nav="programas">Ver coberturas audiovisuales <span aria-hidden="true">↗</span></a>
+              <a href="#programas" data-nav="programas">Ver coberturas audiovisuales <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PROGRAMAS Y CONTENIDOS AUDIOVISUALES -->
+      <!-- PROGRAMAS -->
       <section class="view view--panel" data-view="programas" id="view-programas" aria-labelledby="programs-title" hidden inert aria-hidden="true">
         <div class="panel-scroll">
           <div class="panel-inner interior-container">
@@ -141,7 +139,7 @@
                 <h1 id="programs-title">El potrero <em>en pantalla</em></h1>
                 <p class="panel-lead">Transmisiones, reels y videos de nuestros canales oficiales. Cada pieza conserva su enlace original.</p>
               </div>
-              <a class="home-return" href="/" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
+              <a class="home-return" href="./" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
             </div>
             <div id="program-list" class="program-list"></div>
             <div id="media-groups" class="media-groups" aria-live="polite" aria-busy="false">
@@ -151,7 +149,7 @@
         </div>
       </section>
 
-      <!-- HISTORIA COMPLETA DE VOZ DE POTRERO -->
+      <!-- HISTORIA -->
       <section class="view view--panel" data-view="historia" id="view-historia" hidden inert aria-hidden="true" aria-labelledby="history-title">
         <div class="panel-scroll">
           <div class="panel-inner panel-inner--history interior-container">
@@ -162,11 +160,10 @@
                 <h1 id="history-title">De dónde venimos.<br><em>Hacia dónde vamos.</em></h1>
                 <p class="panel-lead">De un programa de fútbol entre amigos a un medio deportivo con múltiples disciplinas, coberturas y una identidad propia.</p>
               </div>
-              <a class="home-return" href="/" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
+              <a class="home-return" href="./" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
             </div>
 
             <div class="history-timeline">
-
               <article class="history-chapter">
                 <span class="history-number">01</span>
                 <div>
@@ -224,17 +221,16 @@
                 <div>
                   <p class="eyebrow">Septiembre de 2026</p>
                   <h2>Un millón de visualizaciones y una nueva etapa.</h2>
-                  <p>En septiembre, Voz de Potrero pasó a realizar sus programas desde el estudio Blex Contenidos. Las emisiones se extendieron a dos horas, ampliando el espacio para la información, el debate y el análisis.</p>
+                  <p>En septiembre, Voz de Potrero pasó a realizar sus programas desde el estudio Blex Contenidos. Las emisiones se extendieron a two horas, ampliando el espacio para la información, el debate y el análisis.</p>
                   <p>Entre el 12 y el 26 de septiembre, el equipo realizó contenidos vinculados a los Juegos Suramericanos Santa Fe 2026. Durante esa cobertura, Voz de Potrero alcanzó un millón de visualizaciones acumuladas en el conjunto de sus redes sociales.</p>
                   <p>Ese crecimiento impulsó una nueva organización interna y permitió avanzar en la conformación de un equipo comercial dedicado a la gestión de auspiciantes y al desarrollo de nuevas oportunidades para el medio.</p>
                 </div>
               </article>
-
             </div>
 
             <div class="history-end">
               <p>Voz de Potrero: el deporte, desde adentro y con voz propia.</p>
-              <a class="hero-primary" href="/contacto" data-nav="contacto">
+              <a class="hero-primary" href="#contacto" data-nav="contacto">
                 <span class="hero-primary-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24"><path d="M8 5 16 12 8 19"/></svg>
                 </span>
@@ -256,7 +252,7 @@
                 <h1 id="team-title">El equipo <em>de potrero</em></h1>
                 <p class="panel-lead">Personas que comparten el interés por el deporte, las historias y la producción de contenidos.</p>
               </div>
-              <a class="home-return" href="/" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
+              <a class="home-return" href="./" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
             </div>
             <div class="team-grid" id="team-list" aria-live="polite"></div>
             <p class="team-note">Voz de Potrero · Rosario, Argentina</p>
@@ -274,7 +270,7 @@
                 <h1 id="commercial-title">Historias que conectan.<br><em>Marcas que acompañan.</em></h1>
                 <p class="panel-lead">Un medio deportivo de Rosario con identidad propia y producción para distintas pantallas.</p>
               </div>
-              <a class="home-return" href="/" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
+              <a class="home-return" href="./" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
             </div>
 
             <div class="metrics-grid" aria-label="Visualizaciones mensuales confirmadas">
@@ -310,7 +306,7 @@
                 <p class="eyebrow">Próximo paso</p>
                 <h2>Hablemos de una propuesta comercial.</h2>
               </div>
-              <a class="hero-primary" href="/contacto?motivo=Propuesta%20comercial" data-nav="contacto" data-reason="Propuesta comercial">
+              <a class="hero-primary" href="#contacto?motivo=Propuesta%20comercial" data-nav="contacto" data-reason="Propuesta comercial">
                 <span class="hero-primary-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5 16 12 8 19"/></svg></span>
                 Contactar al equipo
               </a>
@@ -330,7 +326,7 @@
                   <h1 id="contact-title">Hablemos <em>de deporte.</em></h1>
                   <p class="panel-lead">Contanos qué necesitás. Para propuestas comerciales, colaboraciones y otras consultas, este es el punto de partida.</p>
                 </div>
-                <a class="home-return" href="/" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
+                <a class="home-return" href="./" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
               </div>
 
               <div class="contact-direct">
@@ -403,10 +399,10 @@
                 <h1 id="art-title" tabindex="-1">Cargando publicación…</h1>
                 <p class="panel-lead" id="art-summary"></p>
               </div>
-              <a class="home-return" href="/noticias" data-nav="noticias"><span aria-hidden="true">←</span> Noticias</a>
+              <a class="home-return" href="#noticias" data-nav="noticias"><span aria-hidden="true">←</span> Noticias</a>
             </div>
             <div class="article-body" id="art-body"></div>
-            <a class="hero-primary article-return" href="/noticias" data-nav="noticias">
+            <a class="hero-primary article-return" href="#noticias" data-nav="noticias">
               <span class="hero-primary-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 5 8 12 16 19"/></svg></span>
               Volver a noticias
             </a>
@@ -423,7 +419,7 @@
                 <p class="eyebrow">Información del sitio</p>
                 <h1 id="legal-title">Privacidad <em>y uso.</em></h1>
               </div>
-              <a class="home-return" href="/" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
+              <a class="home-return" href="./" data-nav="home"><span aria-hidden="true">←</span> Inicio</a>
             </div>
             <h2>Contacto y datos personales</h2>
             <p>Los datos que enviás mediante el formulario se utilizan para atender y responder tu consulta. Para consultas sobre el tratamiento de tus datos, escribí a <a href="mailto:vozdepotrero10@gmail.com">vozdepotrero10@gmail.com</a>.</p>
@@ -441,7 +437,7 @@
             <p class="eyebrow">Fuera de juego</p>
             <h1 id="notfound-title">Esta jugada <em>no existe.</em></h1>
             <p>La página que buscás no está disponible.</p>
-            <a class="hero-primary" href="/" data-nav="home">
+            <a class="hero-primary" href="./" data-nav="home">
               <span class="hero-primary-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5 16 12 8 19"/></svg></span>
               Volver al inicio
             </a>
