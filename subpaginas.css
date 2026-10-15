@@ -755,19 +755,21 @@
     transition: none !important;
   }
 }
-
 /* ---------- CORRECCIÓN DE SCROLL: SUBPÁGINAS ---------- */
-/* Solo Noticias, Historia, Equipo y Comercial.
-   No modifica Contacto, Programas ni Portada. */
+/* Solo Noticias, Historia, Equipo y Comercial. */
 
 #view-noticias .panel-scroll,
 #view-historia .panel-scroll,
 #view-equipo .panel-scroll,
 #view-comercial .panel-scroll {
+  position: absolute;
+  inset: var(--hh) 0 0;
+  width: 100%;
   height: auto;
   max-height: none;
+  overflow-x: hidden;
   overflow-y: auto;
-  overscroll-behavior-y: auto;
+  overscroll-behavior-y: contain;
 }
 
 #view-noticias .panel-inner,
