@@ -755,6 +755,76 @@
     transition: none !important;
   }
 }
+```css
+/* ==========================================
+   AJUSTE VISUAL REAL — VOZ DE POTRERO
+   Solo Noticias, Historia, Equipo y Comercial
+   No modifica scroll, Programas, Contacto ni Portada
+   ========================================== */
+
+/* FONDOS ABSTRACTOS: reemplazan las fotos anteriores */
+
+#view-noticias .panel-scroll::before {
+  background-image:
+    radial-gradient(ellipse at 75% 25%, rgba(63, 113, 163, .28), transparent 55%),
+    linear-gradient(135deg, #202c3d, #101722 65%, #0b0f15) !important;
+  filter: none !important;
+  opacity: .85 !important;
+}
+
+#view-historia .panel-scroll::before {
+  background-image:
+    radial-gradient(ellipse at 25% 25%, rgba(120, 94, 52, .24), transparent 55%),
+    linear-gradient(135deg, #b8a783, #d9c9aa 60%, #e9dfca) !important;
+  filter: none !important;
+  opacity: .65 !important;
+}
+
+#view-equipo .panel-scroll::before {
+  background-image:
+    radial-gradient(ellipse at 75% 20%, rgba(83, 143, 100, .24), transparent 55%),
+    linear-gradient(135deg, #1d3028, #101a17 65%, #0a1110) !important;
+  filter: none !important;
+  opacity: .85 !important;
+}
+
+#view-comercial .panel-scroll::before {
+  background-image:
+    radial-gradient(ellipse at 80% 25%, rgba(204, 157, 65, .20), transparent 55%),
+    linear-gradient(135deg, #30291b, #171714 65%, #0b0c0d) !important;
+  filter: none !important;
+  opacity: .85 !important;
+}
+
+/* HISTORIA: cuadraditos realmente transparentes */
+
+#view-historia .history-chapter {
+  background: rgba(255, 252, 244, .38) !important;
+  border: 1px solid rgba(116, 84, 42, .28) !important;
+  box-shadow: 0 8px 24px rgba(83, 62, 31, .06) !important;
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+}
+
+/* NOTICIAS: tarjetas algo más livianas */
+
+#view-noticias .news-grid > * {
+  background: rgba(19, 25, 36, .72) !important;
+}
+
+/* EQUIPO: tarjetas con transparencia */
+
+#view-equipo .team-grid > *,
+#view-equipo .team-card {
+  background: rgba(19, 31, 26, .74) !important;
+}
+
+/* COMERCIAL: tarjetas menos sólidas */
+
+#view-comercial .offer-card {
+  background: rgba(30, 29, 25, .72) !important;
+}
+```
 /* ---------- CORRECCIÓN DE SCROLL: SUBPÁGINAS ---------- */
 /* Solo Noticias, Historia, Equipo y Comercial. */
 
