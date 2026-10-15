@@ -759,6 +759,7 @@
 /* Solo Noticias, Historia, Equipo y Comercial. */
 
 #view-noticias .panel-scroll,
+#view-programas .panel-scroll,
 #view-historia .panel-scroll,
 #view-equipo .panel-scroll,
 #view-comercial .panel-scroll {
@@ -780,53 +781,3 @@
   padding-bottom: 90px;
 }
 ```css
-/* ==========================================
-   VOZ DE POTRERO — AJUSTE VISUAL SUBPÁGINAS
-   Solo Noticias, Historia, Equipo y Comercial
-   No modificar el scroll ni otras páginas
-   ========================================== */
-
-/* NOTICIAS: ambiente periodístico oscuro */
-#view-noticias .panel-scroll {
-  background-color: #10141c !important;
-  background-image:
-    radial-gradient(ellipse at 80% 10%, rgba(48, 91, 133, 0.20), transparent 48%),
-    linear-gradient(145deg, #10141c 0%, #151c27 55%, #0c1017 100%) !important;
-}
-
-/* HISTORIA: textura visual sutil, verde oscuro */
-#view-historia .panel-scroll {
-  background-color: #101611 !important;
-  background-image:
-    radial-gradient(ellipse at 15% 15%, rgba(65, 105, 66, 0.20), transparent 45%),
-    linear-gradient(145deg, #101611 0%, #171e19 55%, #0c110e 100%) !important;
-}
-
-/* HISTORIA: cuadraditos más transparentes */
-#view-historia .panel-inner article,
-#view-historia .panel-inner [class*="card"],
-#view-historia .panel-inner [class*="item"],
-#view-historia .panel-inner [class*="bloque"] {
-  background-color: rgba(20, 27, 23, 0.48) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-}
-
-/* EQUIPO: luces frías y ambiente deportivo */
-#view-equipo .panel-scroll {
-  background-color: #10141c !important;
-  background-image:
-    radial-gradient(ellipse at 75% 12%, rgba(45, 91, 150, 0.22), transparent 45%),
-    linear-gradient(145deg, #10141c 0%, #17202c 55%, #0c1017 100%) !important;
-}
-
-/* COMERCIAL: negro elegante con reflejos dorados */
-#view-comercial .panel-scroll {
-  background-color: #12110e !important;
-  background-image:
-    radial-gradient(ellipse at 85% 10%, rgba(190, 145, 52, 0.16), transparent 42%),
-    linear-gradient(145deg, #12110e 0%, #1b1914 55%, #0d0d0c 100%) !important;
-}
-```
