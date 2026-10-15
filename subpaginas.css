@@ -4,7 +4,7 @@
 
    Portada, Artículo, Legal y No encontrado: sin cambios.
    Contacto: se conserva su diseño y sus reglas originales.
-   Programas: se conserva su fondo original.
+   Programas: se conserva su fondo, tarjetas y scroll originales.
    ========================================================= */
 
 /* ---------- BASE COMPARTIDA ---------- */
@@ -28,7 +28,6 @@
 #view-equipo .panel-scroll,
 #view-comercial .panel-scroll,
 #view-contacto .panel-scroll {
-  position: relative;
   isolation: isolate;
   background: #10141c !important;
   color: var(--vp-ink) !important;
@@ -109,7 +108,39 @@
   border-color: var(--vp-gold);
 }
 
-/* ---------- FONDOS DE CABECERA ---------- */
+/* ---------- SCROLL INTERNO ----------
+   Cada subpágina (menos Contacto) es un contenedor absoluto que
+   ocupa el alto restante bajo la cabecera y desplaza por dentro.
+   El respaldo 0px en var(--hh) evita que la regla completa se
+   invalide si la variable no está definida en esa vista.
+   ------------------------------------------------------------ */
+
+#view-noticias .panel-scroll,
+#view-programas .panel-scroll,
+#view-historia .panel-scroll,
+#view-equipo .panel-scroll,
+#view-comercial .panel-scroll {
+  position: absolute;
+  inset: var(--hh, 0px) 0 0;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+#view-noticias .panel-inner,
+#view-programas .panel-inner,
+#view-historia .panel-inner,
+#view-equipo .panel-inner,
+#view-comercial .panel-inner {
+  min-height: 100%;
+  padding-bottom: 90px;
+}
+
+/* ---------- FONDOS DE CABECERA (capa compartida) ---------- */
 
 #view-noticias .panel-scroll::before,
 #view-programas .panel-scroll::before,
@@ -143,8 +174,9 @@
 }
 
 /* =========================================================
-   NOTICIAS — FONDO ABSTRACTO DEPORTIVO
-   Sin fotografías reconocibles.
+   NOTICIAS — CANCHA ABSTRACTA EN AZUL NOCHE
+   Círculo central y línea media en trazo fino, franjas
+   diagonales de luz de estadio. Sin fotografías.
    ========================================================= */
 
 #view-noticias {
@@ -154,24 +186,55 @@
 #view-noticias .panel-scroll {
   background:
     radial-gradient(
-      ellipse at 78% 12%,
-      rgba(62, 104, 151, .22),
-      transparent 44%
+      ellipse at 80% 8%,
+      rgba(62, 104, 151, .28),
+      transparent 46%
+    ),
+    radial-gradient(
+      ellipse at 10% 60%,
+      rgba(35, 62, 98, .18),
+      transparent 50%
     ),
     linear-gradient(
       180deg,
       #111722 0%,
-      #111722 40%,
+      #0f1520 45%,
       #0b0f15 100%
     ) !important;
 }
 
 #view-noticias .panel-scroll::before {
+  height: 640px;
+  background-size: auto;
+  background-position: 0 0;
   background-image:
     radial-gradient(
+      circle at 82% 30%,
+      transparent 0 128px,
+      rgba(255, 255, 255, .11) 129px 131px,
+      transparent 132px
+    ),
+    radial-gradient(
+      circle at 82% 30%,
+      transparent 0 238px,
+      rgba(239, 189, 87, .09) 239px 240px,
+      transparent 241px
+    ),
+    linear-gradient(
+      90deg,
+      transparent calc(82% - 1px),
+      rgba(255, 255, 255, .08) calc(82% - 1px) calc(82% + 1px),
+      transparent calc(82% + 1px)
+    ),
+    repeating-linear-gradient(
+      115deg,
+      rgba(255, 255, 255, .03) 0 2px,
+      transparent 2px 54px
+    ),
+    radial-gradient(
       ellipse at 78% 24%,
-      rgba(63, 113, 163, .27),
-      transparent 54%
+      rgba(63, 113, 163, .3),
+      transparent 56%
     ),
     linear-gradient(
       135deg,
@@ -180,7 +243,7 @@
       #0b0f15 100%
     );
   filter: none;
-  opacity: .9;
+  opacity: .92;
 }
 
 #view-noticias .news-grid {
@@ -189,17 +252,28 @@
 
 #view-noticias .news-grid > * {
   color: #f6f3ed !important;
-  background: rgba(19, 25, 36, .76) !important;
-  border: 1px solid rgba(255, 255, 255, .12) !important;
+  background: linear-gradient(
+    160deg,
+    rgba(36, 49, 69, .66),
+    rgba(15, 21, 32, .78)
+  ) !important;
+  border: 1px solid rgba(255, 255, 255, .13) !important;
   border-radius: 5px 5px 16px 16px;
   overflow: hidden;
-  box-shadow: 0 16px 42px rgba(0, 0, 0, .22);
-  transition: transform .25s ease, border-color .25s ease;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .09),
+    0 18px 44px rgba(0, 0, 0, .3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 
 #view-noticias .news-grid > *:hover {
   transform: translateY(-5px);
   border-color: rgba(239, 189, 87, .6) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .12),
+    0 24px 54px rgba(0, 0, 0, .36);
 }
 
 #view-noticias .news-grid h2,
@@ -210,11 +284,12 @@
 #view-noticias .news-grid p,
 #view-noticias .news-grid small,
 #view-noticias .news-grid time {
-  color: #b9c0cd !important;
+  color: #c1c8d4 !important;
 }
 
 /* =========================================================
-   PROGRAMAS — SE CONSERVA EL FONDO ORIGINAL
+   PROGRAMAS — SE CONSERVA EL DISEÑO ORIGINAL
+   No modificar este apartado.
    ========================================================= */
 
 #view-programas {
@@ -284,7 +359,9 @@
 }
 
 /* =========================================================
-   HISTORIA — FONDO CÁLIDO Y TARJETAS TRANSPARENTES
+   HISTORIA — PAPEL CÁLIDO, POTRERO Y TARJETAS EDITORIALES
+   Franjas de césped segado en sepia, círculo de mitad de
+   cancha y viñeta de papel envejecido.
    ========================================================= */
 
 #view-historia {
@@ -297,34 +374,59 @@
 #view-historia .panel-scroll {
   background:
     radial-gradient(
-      ellipse at 25% 12%,
-      rgba(120, 94, 52, .19),
+      ellipse at 22% 8%,
+      rgba(120, 94, 52, .2),
       transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(96, 70, 38, .16),
+      transparent 55%
     ),
     linear-gradient(
       135deg,
-      #e5d7bb 0%,
-      #f1e9db 48%,
-      #e8deca 100%
+      #e2d2b2 0%,
+      #eee4d0 48%,
+      #e4d8c0 100%
     ) !important;
   color: #29251e !important;
 }
 
 #view-historia .panel-scroll::before {
+  height: 720px;
+  background-size: auto;
+  background-position: 0 0;
   background-image:
     radial-gradient(
+      circle at 84% 34%,
+      transparent 0 136px,
+      rgba(104, 77, 38, .2) 137px 139px,
+      transparent 140px
+    ),
+    linear-gradient(
+      90deg,
+      transparent calc(84% - 1px),
+      rgba(104, 77, 38, .16) calc(84% - 1px) calc(84% + 1px),
+      transparent calc(84% + 1px)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(104, 77, 38, .06) 0 84px,
+      transparent 84px 168px
+    ),
+    radial-gradient(
       ellipse at 25% 25%,
-      rgba(120, 94, 52, .24),
-      transparent 55%
+      rgba(120, 94, 52, .26),
+      transparent 56%
     ),
     linear-gradient(
       135deg,
       #b8a783 0%,
-      #d9c9aa 60%,
-      #e9dfca 100%
+      #d6c5a5 60%,
+      #e6dbc3 100%
     );
   filter: none;
-  opacity: .7;
+  opacity: .78;
 }
 
 #view-historia .panel-heading h1 {
@@ -344,18 +446,26 @@
 }
 
 #view-historia .history-timeline {
-  border-color: rgba(104, 77, 38, .3) !important;
+  border-color: rgba(104, 77, 38, .32) !important;
 }
 
 #view-historia .history-chapter {
   position: relative;
   color: #29251e !important;
-  background: rgba(255, 252, 244, .38) !important;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 252, 244, .56),
+    rgba(247, 238, 220, .3)
+  ) !important;
   border: 1px solid rgba(116, 84, 42, .28) !important;
-  border-radius: 4px 14px 14px 4px;
-  box-shadow: 0 8px 24px rgba(83, 62, 31, .06) !important;
-  -webkit-backdrop-filter: blur(7px);
-  backdrop-filter: blur(7px);
+  border-radius: 4px 16px 16px 4px;
+  box-shadow:
+    inset 3px 0 0 rgba(155, 108, 32, .55),
+    inset 0 1px 0 rgba(255, 255, 255, .65),
+    0 16px 38px rgba(83, 62, 31, .13),
+    0 2px 6px rgba(83, 62, 31, .08) !important;
+  -webkit-backdrop-filter: blur(9px) saturate(1.1);
+  backdrop-filter: blur(9px) saturate(1.1);
 }
 
 #view-historia .history-chapter h2,
@@ -365,7 +475,7 @@
 }
 
 #view-historia .history-chapter p:not(.eyebrow) {
-  color: #62594b !important;
+  color: #4f473a !important;
   line-height: 1.85;
 }
 
@@ -374,7 +484,8 @@
 }
 
 /* =========================================================
-   EQUIPO — FONDO VERDE ABSTRACTO
+   EQUIPO — VERDE CANCHA ABSTRACTO
+   Franjas de césped, área y semicírculo en trazo fino.
    ========================================================= */
 
 #view-equipo {
@@ -384,9 +495,14 @@
 #view-equipo .panel-scroll {
   background:
     radial-gradient(
-      ellipse at 15% 20%,
-      rgba(63, 111, 71, .22),
-      transparent 42%
+      ellipse at 15% 12%,
+      rgba(63, 111, 71, .26),
+      transparent 44%
+    ),
+    radial-gradient(
+      ellipse at 92% 70%,
+      rgba(46, 88, 62, .16),
+      transparent 50%
     ),
     linear-gradient(
       180deg,
@@ -396,11 +512,31 @@
 }
 
 #view-equipo .panel-scroll::before {
+  height: 640px;
+  background-size: auto;
+  background-position: 0 0;
   background-image:
     radial-gradient(
+      circle at 16% 100%,
+      transparent 0 190px,
+      rgba(199, 226, 161, .12) 191px 193px,
+      transparent 194px
+    ),
+    radial-gradient(
+      circle at 84% 22%,
+      transparent 0 104px,
+      rgba(199, 226, 161, .09) 105px 107px,
+      transparent 108px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(199, 226, 161, .035) 0 70px,
+      transparent 70px 140px
+    ),
+    radial-gradient(
       ellipse at 75% 20%,
-      rgba(83, 143, 100, .24),
-      transparent 55%
+      rgba(83, 143, 100, .26),
+      transparent 56%
     ),
     linear-gradient(
       135deg,
@@ -409,7 +545,7 @@
       #0a1110 100%
     );
   filter: none;
-  opacity: .9;
+  opacity: .92;
 }
 
 #view-equipo .team-grid {
@@ -419,10 +555,18 @@
 #view-equipo .team-grid > *,
 #view-equipo .team-card {
   color: #f4f4ed !important;
-  background: rgba(19, 31, 26, .74) !important;
-  border: 1px solid rgba(199, 226, 161, .16) !important;
+  background: linear-gradient(
+    160deg,
+    rgba(32, 52, 43, .62),
+    rgba(14, 24, 20, .76)
+  ) !important;
+  border: 1px solid rgba(199, 226, 161, .18) !important;
   border-radius: 10px;
-  box-shadow: 0 14px 38px rgba(0, 0, 0, .18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .07),
+    0 16px 40px rgba(0, 0, 0, .26);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
   transition: transform .25s ease, border-color .25s ease;
 }
 
@@ -440,11 +584,12 @@
 }
 
 #view-equipo .team-note {
-  color: #bdc9bf !important;
+  color: #c4d0c6 !important;
 }
 
 /* =========================================================
-   COMERCIAL — FONDO OSCURO Y DORADO
+   COMERCIAL — NEGRO CARBÓN CON FILETES DORADOS
+   Trama diagonal de hilos dorados y resplandor cálido.
    ========================================================= */
 
 #view-comercial {
@@ -454,9 +599,14 @@
 #view-comercial .panel-scroll {
   background:
     radial-gradient(
-      ellipse at 85% 20%,
-      rgba(157, 112, 32, .17),
-      transparent 38%
+      ellipse at 85% 14%,
+      rgba(157, 112, 32, .22),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 8% 55%,
+      rgba(120, 88, 28, .1),
+      transparent 45%
     ),
     linear-gradient(
       180deg,
@@ -466,11 +616,30 @@
 }
 
 #view-comercial .panel-scroll::before {
+  height: 640px;
+  background-size: auto;
+  background-position: 0 0;
   background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(231, 182, 78, .07) 0 1px,
+      transparent 1px 38px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(231, 182, 78, .03) 0 1px,
+      transparent 1px 38px
+    ),
+    radial-gradient(
+      circle at 82% 28%,
+      transparent 0 150px,
+      rgba(231, 182, 78, .13) 151px 152px,
+      transparent 153px
+    ),
     radial-gradient(
       ellipse at 80% 25%,
-      rgba(204, 157, 65, .20),
-      transparent 55%
+      rgba(204, 157, 65, .24),
+      transparent 56%
     ),
     linear-gradient(
       135deg,
@@ -479,7 +648,7 @@
       #0b0c0d 100%
     );
   filter: none;
-  opacity: .9;
+  opacity: .92;
 }
 
 #view-comercial .metrics-grid {
@@ -495,18 +664,25 @@
   color: #f7f2e7 !important;
   background: linear-gradient(
     145deg,
-    rgba(35, 34, 29, .98),
-    rgba(20, 20, 18, .98)
+    rgba(44, 41, 33, .86),
+    rgba(20, 20, 18, .92)
   ) !important;
-  border: 1px solid rgba(231, 182, 78, .24) !important;
+  border: 1px solid rgba(231, 182, 78, .28) !important;
   border-radius: 5px 5px 15px 5px;
-  box-shadow: 0 12px 34px rgba(0, 0, 0, .18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 236, 190, .1),
+    0 16px 40px rgba(0, 0, 0, .3);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 #view-comercial .metric-card--primary {
   background: linear-gradient(145deg, #e7b64e, #b9852e) !important;
   border-color: #e7b64e !important;
   color: #1b1710 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .35),
+    0 18px 44px rgba(185, 133, 46, .25);
 }
 
 #view-comercial .metric-label {
@@ -549,7 +725,7 @@
 
 #view-comercial .commercial-intro {
   color: #f7f2e7 !important;
-  border-top: 1px solid rgba(231, 182, 78, .24);
+  border-top: 1px solid rgba(231, 182, 78, .28);
   margin-top: 44px;
   padding-top: 30px;
 }
@@ -560,7 +736,7 @@
 }
 
 #view-comercial .commercial-intro > p {
-  color: #c4c0b5 !important;
+  color: #cdc9be !important;
   line-height: 1.8;
 }
 
@@ -570,9 +746,18 @@
 
 #view-comercial .offer-card {
   color: #f7f2e7 !important;
-  background: rgba(30, 29, 25, .72) !important;
-  border: 1px solid rgba(231, 182, 78, .2) !important;
+  background: linear-gradient(
+    150deg,
+    rgba(44, 41, 33, .7),
+    rgba(22, 21, 18, .8)
+  ) !important;
+  border: 1px solid rgba(231, 182, 78, .22) !important;
   border-radius: 5px 5px 14px 5px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 236, 190, .07),
+    0 14px 34px rgba(0, 0, 0, .26);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   transition: border-color .2s ease, transform .2s ease;
 }
 
@@ -586,7 +771,7 @@
 }
 
 #view-comercial .offer-card p {
-  color: #c4c0b5 !important;
+  color: #cdc9be !important;
 }
 
 #view-comercial .offer-card > span {
@@ -599,11 +784,14 @@
   color: #f7f2e7 !important;
   background: linear-gradient(
     120deg,
-    rgba(231, 182, 78, .12),
-    rgba(231, 182, 78, .025)
+    rgba(231, 182, 78, .16),
+    rgba(231, 182, 78, .04)
   ) !important;
-  border: 1px solid rgba(231, 182, 78, .28) !important;
+  border: 1px solid rgba(231, 182, 78, .32) !important;
   border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .24);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 /* =========================================================
@@ -617,6 +805,7 @@
 }
 
 #view-contacto .panel-scroll {
+  position: relative;
   overflow-x: clip;
   background:
     radial-gradient(ellipse at 12% 22%, rgba(95, 73, 255, .19), transparent 34%),
@@ -858,12 +1047,21 @@
     border-radius: 13px;
   }
 
+  #view-programas .panel-scroll::before {
+    height: 360px;
+  }
+
   #view-noticias .panel-scroll::before,
-  #view-programas .panel-scroll::before,
   #view-historia .panel-scroll::before,
   #view-equipo .panel-scroll::before,
   #view-comercial .panel-scroll::before {
-    height: 360px;
+    height: 480px;
+  }
+
+  #view-noticias .panel-scroll::before,
+  #view-equipo .panel-scroll::before,
+  #view-comercial .panel-scroll::before {
+    background-position: 30% 0;
   }
 }
 
@@ -878,39 +1076,10 @@
   #view-noticias .news-grid > *,
   #view-programas .program-list > *,
   #view-programas .media-card,
+  #view-equipo .team-grid > *,
   #view-equipo .team-card,
   #view-comercial .offer-card,
   #view-contacto .form-submit {
     transition: none !important;
   }
-}
-
-/* =========================================================
-   SCROLL INTERNO DE SUBPÁGINAS
-   Contacto no se incluye en este bloque.
-   ========================================================= */
-
-#view-noticias .panel-scroll,
-#view-programas .panel-scroll,
-#view-historia .panel-scroll,
-#view-equipo .panel-scroll,
-#view-comercial .panel-scroll {
-  position: absolute;
-  inset: var(--hh) 0 0;
-  width: 100%;
-  height: auto;
-  max-height: none;
-  overflow-x: hidden;
-  overflow-y: auto;
-  overscroll-behavior-y: contain;
-  -webkit-overflow-scrolling: touch;
-}
-
-#view-noticias .panel-inner,
-#view-programas .panel-inner,
-#view-historia .panel-inner,
-#view-equipo .panel-inner,
-#view-comercial .panel-inner {
-  min-height: 100%;
-  padding-bottom: 90px;
 }
