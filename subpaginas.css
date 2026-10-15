@@ -205,45 +205,21 @@
 
 #view-noticias .panel-scroll::before {
   height: 640px;
-  background-size: auto;
-  background-position: 0 0;
+  background-position: center 40%;
   background-image:
-    radial-gradient(
-      circle at 82% 30%,
-      transparent 0 128px,
-      rgba(255, 255, 255, .11) 129px 131px,
-      transparent 132px
-    ),
-    radial-gradient(
-      circle at 82% 30%,
-      transparent 0 238px,
-      rgba(239, 189, 87, .09) 239px 240px,
-      transparent 241px
-    ),
     linear-gradient(
       90deg,
-      transparent calc(82% - 1px),
-      rgba(255, 255, 255, .08) calc(82% - 1px) calc(82% + 1px),
-      transparent calc(82% + 1px)
-    ),
-    repeating-linear-gradient(
-      115deg,
-      rgba(255, 255, 255, .03) 0 2px,
-      transparent 2px 54px
-    ),
-    radial-gradient(
-      ellipse at 78% 24%,
-      rgba(63, 113, 163, .3),
-      transparent 56%
+      rgba(9, 14, 22, .88),
+      rgba(9, 14, 22, .42)
     ),
     linear-gradient(
-      135deg,
-      #202c3d 0%,
-      #141d2a 52%,
-      #0b0f15 100%
-    );
+      0deg,
+      #0b0f15 0%,
+      transparent 88%
+    ),
+    url("https://images.pexels.com/photos/15779126/pexels-photo-15779126.jpeg?auto=compress&cs=tinysrgb&w=1800");
   filter: none;
-  opacity: .92;
+  opacity: .95;
 }
 
 #view-noticias .news-grid {
@@ -394,39 +370,21 @@
 
 #view-historia .panel-scroll::before {
   height: 720px;
-  background-size: auto;
-  background-position: 0 0;
+  background-position: center 45%;
   background-image:
-    radial-gradient(
-      circle at 84% 34%,
-      transparent 0 136px,
-      rgba(104, 77, 38, .2) 137px 139px,
-      transparent 140px
-    ),
     linear-gradient(
       90deg,
-      transparent calc(84% - 1px),
-      rgba(104, 77, 38, .16) calc(84% - 1px) calc(84% + 1px),
-      transparent calc(84% + 1px)
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(104, 77, 38, .06) 0 84px,
-      transparent 84px 168px
-    ),
-    radial-gradient(
-      ellipse at 25% 25%,
-      rgba(120, 94, 52, .26),
-      transparent 56%
+      rgba(232, 220, 195, .82),
+      rgba(232, 220, 195, .38)
     ),
     linear-gradient(
-      135deg,
-      #b8a783 0%,
-      #d6c5a5 60%,
-      #e6dbc3 100%
-    );
-  filter: none;
-  opacity: .78;
+      0deg,
+      #e9dfca 0%,
+      transparent 88%
+    ),
+    url("https://images.pexels.com/photos/1657322/pexels-photo-1657322.jpeg?auto=compress&cs=tinysrgb&w=1800");
+  filter: sepia(.9) saturate(.85) contrast(.95);
+  opacity: .9;
 }
 
 #view-historia .panel-heading h1 {
@@ -513,39 +471,21 @@
 
 #view-equipo .panel-scroll::before {
   height: 640px;
-  background-size: auto;
-  background-position: 0 0;
+  background-position: center 50%;
   background-image:
-    radial-gradient(
-      circle at 16% 100%,
-      transparent 0 190px,
-      rgba(199, 226, 161, .12) 191px 193px,
-      transparent 194px
-    ),
-    radial-gradient(
-      circle at 84% 22%,
-      transparent 0 104px,
-      rgba(199, 226, 161, .09) 105px 107px,
-      transparent 108px
-    ),
-    repeating-linear-gradient(
+    linear-gradient(
       90deg,
-      rgba(199, 226, 161, .035) 0 70px,
-      transparent 70px 140px
-    ),
-    radial-gradient(
-      ellipse at 75% 20%,
-      rgba(83, 143, 100, .26),
-      transparent 56%
+      rgba(8, 16, 13, .88),
+      rgba(8, 16, 13, .42)
     ),
     linear-gradient(
-      135deg,
-      #1d3028 0%,
-      #101a17 65%,
-      #0a1110 100%
-    );
+      0deg,
+      #0a1110 0%,
+      transparent 88%
+    ),
+    url("https://images.pexels.com/photos/28827841/pexels-photo-28827841.jpeg?auto=compress&cs=tinysrgb&w=1800");
   filter: none;
-  opacity: .92;
+  opacity: .95;
 }
 
 #view-equipo .team-grid {
@@ -617,38 +557,26 @@
 
 #view-comercial .panel-scroll::before {
   height: 640px;
-  background-size: auto;
-  background-position: 0 0;
+  background-position: center 45%;
   background-image:
-    repeating-linear-gradient(
-      135deg,
-      rgba(231, 182, 78, .07) 0 1px,
-      transparent 1px 38px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(231, 182, 78, .03) 0 1px,
-      transparent 1px 38px
-    ),
-    radial-gradient(
-      circle at 82% 28%,
-      transparent 0 150px,
-      rgba(231, 182, 78, .13) 151px 152px,
-      transparent 153px
-    ),
-    radial-gradient(
-      ellipse at 80% 25%,
-      rgba(204, 157, 65, .24),
-      transparent 56%
+    linear-gradient(
+      90deg,
+      rgba(12, 11, 9, .9),
+      rgba(12, 11, 9, .5)
     ),
     linear-gradient(
-      135deg,
-      #30291b 0%,
-      #171714 65%,
-      #0b0c0d 100%
-    );
+      0deg,
+      #0b0c0d 0%,
+      transparent 88%
+    ),
+    radial-gradient(
+      ellipse at 82% 28%,
+      rgba(204, 157, 65, .22),
+      transparent 55%
+    ),
+    url("https://images.pexels.com/photos/36603886/pexels-photo-36603886.jpeg?auto=compress&cs=tinysrgb&w=1800");
   filter: none;
-  opacity: .92;
+  opacity: .95;
 }
 
 #view-comercial .metrics-grid {
@@ -1056,12 +984,6 @@
   #view-equipo .panel-scroll::before,
   #view-comercial .panel-scroll::before {
     height: 480px;
-  }
-
-  #view-noticias .panel-scroll::before,
-  #view-equipo .panel-scroll::before,
-  #view-comercial .panel-scroll::before {
-    background-position: 30% 0;
   }
 }
 
