@@ -1,8 +1,10 @@
 /* =========================================================
    VOZ DE POTRERO — IDENTIDAD VISUAL DE LAS SUBPÁGINAS
-   Solo modifica Noticias, Programas, Historia, Equipo,
-   Comercial y Contacto.
-   La portada, Artículo, Legal y No encontrado quedan fuera.
+   Archivo: subpaginas.css
+
+   Portada, Artículo, Legal y No encontrado: sin cambios.
+   Contacto: se conserva su diseño y sus reglas originales.
+   Programas: se conserva su fondo original.
    ========================================================= */
 
 /* ---------- BASE COMPARTIDA ---------- */
@@ -107,9 +109,7 @@
   border-color: var(--vp-gold);
 }
 
-/* ---------- IMÁGENES DE CABECERA ---------- */
-/* Imágenes de Pexels. Las capas oscuras mantienen
-   los títulos legibles y las fotos no cubren el contenido. */
+/* ---------- FONDOS DE CABECERA ---------- */
 
 #view-noticias .panel-scroll::before,
 #view-programas .panel-scroll::before,
@@ -128,11 +128,24 @@
   background-size: cover;
   background-position: center 42%;
   opacity: .95;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 42%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 42%,
+    transparent 100%
+  );
 }
 
-/* NOTICIAS — fotografía deportiva y estética editorial */
+/* =========================================================
+   NOTICIAS — FONDO ABSTRACTO DEPORTIVO
+   Sin fotografías reconocibles.
+   ========================================================= */
 
 #view-noticias {
   --vp-gold: #efbd57;
@@ -140,14 +153,34 @@
 
 #view-noticias .panel-scroll {
   background:
-    linear-gradient(180deg, #111722 0%, #111722 40%, #0b0f15 100%) !important;
+    radial-gradient(
+      ellipse at 78% 12%,
+      rgba(62, 104, 151, .22),
+      transparent 44%
+    ),
+    linear-gradient(
+      180deg,
+      #111722 0%,
+      #111722 40%,
+      #0b0f15 100%
+    ) !important;
 }
 
 #view-noticias .panel-scroll::before {
   background-image:
-    linear-gradient(90deg, rgba(7, 10, 16, .9), rgba(7, 10, 16, .35)),
-    linear-gradient(0deg, #111722 0%, transparent 90%),
-    url("https://images.pexels.com/photos/32190700/pexels-photo-32190700.jpeg?auto=compress&cs=tinysrgb&w=1800");
+    radial-gradient(
+      ellipse at 78% 24%,
+      rgba(63, 113, 163, .27),
+      transparent 54%
+    ),
+    linear-gradient(
+      135deg,
+      #202c3d 0%,
+      #141d2a 52%,
+      #0b0f15 100%
+    );
+  filter: none;
+  opacity: .9;
 }
 
 #view-noticias .news-grid {
@@ -156,7 +189,7 @@
 
 #view-noticias .news-grid > * {
   color: #f6f3ed !important;
-  background: rgba(19, 25, 36, .92) !important;
+  background: rgba(19, 25, 36, .76) !important;
   border: 1px solid rgba(255, 255, 255, .12) !important;
   border-radius: 5px 5px 16px 16px;
   overflow: hidden;
@@ -180,7 +213,9 @@
   color: #b9c0cd !important;
 }
 
-/* PROGRAMAS — identidad audiovisual */
+/* =========================================================
+   PROGRAMAS — SE CONSERVA EL FONDO ORIGINAL
+   ========================================================= */
 
 #view-programas {
   --vp-gold: #69d9e7;
@@ -188,14 +223,30 @@
 
 #view-programas .panel-scroll {
   background:
-    radial-gradient(ellipse at 80% 15%, rgba(21, 103, 139, .22), transparent 38%),
-    linear-gradient(180deg, #081522, #0b0e18 75%) !important;
+    radial-gradient(
+      ellipse at 80% 15%,
+      rgba(21, 103, 139, .22),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #081522,
+      #0b0e18 75%
+    ) !important;
 }
 
 #view-programas .panel-scroll::before {
   background-image:
-    linear-gradient(90deg, rgba(5, 12, 23, .91), rgba(5, 12, 23, .35)),
-    linear-gradient(0deg, #081522 0%, transparent 90%),
+    linear-gradient(
+      90deg,
+      rgba(5, 12, 23, .91),
+      rgba(5, 12, 23, .35)
+    ),
+    linear-gradient(
+      0deg,
+      #081522 0%,
+      transparent 90%
+    ),
     url("https://images.pexels.com/photos/32007691/pexels-photo-32007691.jpeg?auto=compress&cs=tinysrgb&w=1800");
 }
 
@@ -232,7 +283,9 @@
   color: #fff !important;
 }
 
-/* HISTORIA — tonos cálidos y memoria de potrero */
+/* =========================================================
+   HISTORIA — FONDO CÁLIDO Y TARJETAS TRANSPARENTES
+   ========================================================= */
 
 #view-historia {
   --vp-ink: #29251e;
@@ -243,17 +296,35 @@
 
 #view-historia .panel-scroll {
   background:
-    linear-gradient(180deg, #e9dfca 0%, #f1e9db 45%, #e8deca 100%) !important;
+    radial-gradient(
+      ellipse at 25% 12%,
+      rgba(120, 94, 52, .19),
+      transparent 48%
+    ),
+    linear-gradient(
+      135deg,
+      #e5d7bb 0%,
+      #f1e9db 48%,
+      #e8deca 100%
+    ) !important;
   color: #29251e !important;
 }
 
 #view-historia .panel-scroll::before {
   background-image:
-    linear-gradient(90deg, rgba(34, 27, 19, .68), rgba(34, 27, 19, .12)),
-    linear-gradient(0deg, #e9dfca 0%, transparent 100%),
-    url("https://images.pexels.com/photos/13657363/pexels-photo-13657363.jpeg?auto=compress&cs=tinysrgb&w=1800");
-  filter: sepia(.28);
-  opacity: .72;
+    radial-gradient(
+      ellipse at 25% 25%,
+      rgba(120, 94, 52, .24),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #b8a783 0%,
+      #d9c9aa 60%,
+      #e9dfca 100%
+    );
+  filter: none;
+  opacity: .7;
 }
 
 #view-historia .panel-heading h1 {
@@ -279,11 +350,12 @@
 #view-historia .history-chapter {
   position: relative;
   color: #29251e !important;
-  background: rgba(255, 252, 244, .82) !important;
-  border: 1px solid rgba(116, 84, 42, .2) !important;
+  background: rgba(255, 252, 244, .38) !important;
+  border: 1px solid rgba(116, 84, 42, .28) !important;
   border-radius: 4px 14px 14px 4px;
-  box-shadow: 0 10px 30px rgba(83, 62, 31, .08);
-  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 24px rgba(83, 62, 31, .06) !important;
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
 }
 
 #view-historia .history-chapter h2,
@@ -301,7 +373,9 @@
   color: #9b6c20 !important;
 }
 
-/* EQUIPO — estética editorial, sin modificar integrantes */
+/* =========================================================
+   EQUIPO — FONDO VERDE ABSTRACTO
+   ========================================================= */
 
 #view-equipo {
   --vp-gold: #c7e2a1;
@@ -309,15 +383,33 @@
 
 #view-equipo .panel-scroll {
   background:
-    radial-gradient(ellipse at 15% 20%, rgba(63, 111, 71, .22), transparent 42%),
-    linear-gradient(180deg, #101a17, #0a1110 75%) !important;
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(63, 111, 71, .22),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      #101a17,
+      #0a1110 75%
+    ) !important;
 }
 
 #view-equipo .panel-scroll::before {
   background-image:
-    linear-gradient(90deg, rgba(7, 17, 13, .88), rgba(7, 17, 13, .38)),
-    linear-gradient(0deg, #101a17 0%, transparent 90%),
-    url("https://images.pexels.com/photos/33454728/pexels-photo-33454728.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    radial-gradient(
+      ellipse at 75% 20%,
+      rgba(83, 143, 100, .24),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #1d3028 0%,
+      #101a17 65%,
+      #0a1110 100%
+    );
+  filter: none;
+  opacity: .9;
 }
 
 #view-equipo .team-grid {
@@ -327,7 +419,7 @@
 #view-equipo .team-grid > *,
 #view-equipo .team-card {
   color: #f4f4ed !important;
-  background: rgba(19, 31, 26, .93) !important;
+  background: rgba(19, 31, 26, .74) !important;
   border: 1px solid rgba(199, 226, 161, .16) !important;
   border-radius: 10px;
   box-shadow: 0 14px 38px rgba(0, 0, 0, .18);
@@ -351,7 +443,9 @@
   color: #bdc9bf !important;
 }
 
-/* COMERCIAL — propuesta premium para marcas */
+/* =========================================================
+   COMERCIAL — FONDO OSCURO Y DORADO
+   ========================================================= */
 
 #view-comercial {
   --vp-gold: #e7b64e;
@@ -359,15 +453,33 @@
 
 #view-comercial .panel-scroll {
   background:
-    radial-gradient(ellipse at 85% 20%, rgba(157, 112, 32, .17), transparent 38%),
-    linear-gradient(180deg, #171714, #0b0c0d 80%) !important;
+    radial-gradient(
+      ellipse at 85% 20%,
+      rgba(157, 112, 32, .17),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #171714,
+      #0b0c0d 80%
+    ) !important;
 }
 
 #view-comercial .panel-scroll::before {
   background-image:
-    linear-gradient(90deg, rgba(12, 12, 11, .92), rgba(12, 12, 11, .4)),
-    linear-gradient(0deg, #171714 0%, transparent 90%),
-    url("https://images.pexels.com/photos/31331113/pexels-photo-31331113.jpeg?auto=compress&cs=tinysrgb&w=1800");
+    radial-gradient(
+      ellipse at 80% 25%,
+      rgba(204, 157, 65, .20),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #30291b 0%,
+      #171714 65%,
+      #0b0c0d 100%
+    );
+  filter: none;
+  opacity: .9;
 }
 
 #view-comercial .metrics-grid {
@@ -381,7 +493,11 @@
   min-width: 0;
   padding: 22px 20px;
   color: #f7f2e7 !important;
-  background: linear-gradient(145deg, rgba(35, 34, 29, .98), rgba(20, 20, 18, .98)) !important;
+  background: linear-gradient(
+    145deg,
+    rgba(35, 34, 29, .98),
+    rgba(20, 20, 18, .98)
+  ) !important;
   border: 1px solid rgba(231, 182, 78, .24) !important;
   border-radius: 5px 5px 15px 5px;
   box-shadow: 0 12px 34px rgba(0, 0, 0, .18);
@@ -454,7 +570,7 @@
 
 #view-comercial .offer-card {
   color: #f7f2e7 !important;
-  background: rgba(30, 29, 25, .92) !important;
+  background: rgba(30, 29, 25, .72) !important;
   border: 1px solid rgba(231, 182, 78, .2) !important;
   border-radius: 5px 5px 14px 5px;
   transition: border-color .2s ease, transform .2s ease;
@@ -481,12 +597,19 @@
   margin-top: 26px;
   padding: 28px;
   color: #f7f2e7 !important;
-  background: linear-gradient(120deg, rgba(231, 182, 78, .12), rgba(231, 182, 78, .025)) !important;
+  background: linear-gradient(
+    120deg,
+    rgba(231, 182, 78, .12),
+    rgba(231, 182, 78, .025)
+  ) !important;
   border: 1px solid rgba(231, 182, 78, .28) !important;
   border-radius: 8px;
 }
 
-/* CONTACTO — neón, partículas y formulario */
+/* =========================================================
+   CONTACTO — BLOQUE ORIGINAL CONSERVADO
+   No modificar este apartado.
+   ========================================================= */
 
 #view-contacto {
   --vp-gold: #f0c5ff;
@@ -638,7 +761,7 @@
   overflow-wrap: anywhere;
 }
 
-/* ---------- BOTONES DENTRO DE LAS SUBPÁGINAS ---------- */
+/* ---------- BOTONES DE LAS SUBPÁGINAS ---------- */
 
 #view-noticias .hero-primary,
 #view-programas .hero-primary,
@@ -659,7 +782,7 @@
   filter: brightness(1.07);
 }
 
-/* ---------- CARGA Y ESTADOS VACÍOS ---------- */
+/* ---------- ESTADOS DE CARGA Y VACÍOS ---------- */
 
 #view-noticias .loading-state,
 #view-noticias .empty-state,
@@ -673,12 +796,13 @@
   border-radius: 10px;
 }
 
-/* ---------- MOVIMIENTO Y ACCESIBILIDAD ---------- */
+/* ---------- ANIMACIONES ORIGINALES DE CONTACTO ---------- */
 
 @keyframes vp-contact-particles {
   from {
     background-position: 0 0, 38px 55px, 100px 20px;
   }
+
   to {
     background-position: 0 220px, 38px -150px, 100px 260px;
   }
@@ -689,11 +813,14 @@
     opacity: .55;
     transform: scale(.92) translateX(-1%);
   }
+
   to {
     opacity: 1;
     transform: scale(1.08) translateX(1%);
   }
 }
+
+/* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 1000px) {
   #view-comercial .metrics-grid {
@@ -740,6 +867,8 @@
   }
 }
 
+/* ---------- ACCESIBILIDAD ---------- */
+
 @media (prefers-reduced-motion: reduce) {
   #view-contacto .panel-scroll::before,
   #view-contacto .panel-scroll::after {
@@ -755,78 +884,11 @@
     transition: none !important;
   }
 }
-```css
-/* ==========================================
-   AJUSTE VISUAL REAL — VOZ DE POTRERO
-   Solo Noticias, Historia, Equipo y Comercial
-   No modifica scroll, Programas, Contacto ni Portada
-   ========================================== */
 
-/* FONDOS ABSTRACTOS: reemplazan las fotos anteriores */
-
-#view-noticias .panel-scroll::before {
-  background-image:
-    radial-gradient(ellipse at 75% 25%, rgba(63, 113, 163, .28), transparent 55%),
-    linear-gradient(135deg, #202c3d, #101722 65%, #0b0f15) !important;
-  filter: none !important;
-  opacity: .85 !important;
-}
-
-#view-historia .panel-scroll::before {
-  background-image:
-    radial-gradient(ellipse at 25% 25%, rgba(120, 94, 52, .24), transparent 55%),
-    linear-gradient(135deg, #b8a783, #d9c9aa 60%, #e9dfca) !important;
-  filter: none !important;
-  opacity: .65 !important;
-}
-
-#view-equipo .panel-scroll::before {
-  background-image:
-    radial-gradient(ellipse at 75% 20%, rgba(83, 143, 100, .24), transparent 55%),
-    linear-gradient(135deg, #1d3028, #101a17 65%, #0a1110) !important;
-  filter: none !important;
-  opacity: .85 !important;
-}
-
-#view-comercial .panel-scroll::before {
-  background-image:
-    radial-gradient(ellipse at 80% 25%, rgba(204, 157, 65, .20), transparent 55%),
-    linear-gradient(135deg, #30291b, #171714 65%, #0b0c0d) !important;
-  filter: none !important;
-  opacity: .85 !important;
-}
-
-/* HISTORIA: cuadraditos realmente transparentes */
-
-#view-historia .history-chapter {
-  background: rgba(255, 252, 244, .38) !important;
-  border: 1px solid rgba(116, 84, 42, .28) !important;
-  box-shadow: 0 8px 24px rgba(83, 62, 31, .06) !important;
-  -webkit-backdrop-filter: blur(7px);
-  backdrop-filter: blur(7px);
-}
-
-/* NOTICIAS: tarjetas algo más livianas */
-
-#view-noticias .news-grid > * {
-  background: rgba(19, 25, 36, .72) !important;
-}
-
-/* EQUIPO: tarjetas con transparencia */
-
-#view-equipo .team-grid > *,
-#view-equipo .team-card {
-  background: rgba(19, 31, 26, .74) !important;
-}
-
-/* COMERCIAL: tarjetas menos sólidas */
-
-#view-comercial .offer-card {
-  background: rgba(30, 29, 25, .72) !important;
-}
-```
-/* ---------- CORRECCIÓN DE SCROLL: SUBPÁGINAS ---------- */
-/* Solo Noticias, Historia, Equipo y Comercial. */
+/* =========================================================
+   SCROLL INTERNO DE SUBPÁGINAS
+   Contacto no se incluye en este bloque.
+   ========================================================= */
 
 #view-noticias .panel-scroll,
 #view-programas .panel-scroll,
@@ -841,6 +903,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 #view-noticias .panel-inner,
